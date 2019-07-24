@@ -1,22 +1,27 @@
-/*jshint esversion: 6 */
 
+// La classe Command sera la classe parente des
+// autres commandes 
 module.exports = class Command {
 
-    static parse (message) {
+    // Les autres commandes hériteront de parse() qui vérifie 
+    // simplement que la commande entrée est celle qui 
+    // est attendue par la commande enfant.
+    static parse(message) {
         if (this.match(message)) {
             this.action(message);
-            console.log("🤖 " + message.author.tag  + " a dit " + message.content);
+            console.log("🤖 " + message.author.tag + " a dit " + message.content);
             message.delete();
             return true;
         }
         return false;
     }
 
-    static match (message) {
+    // On verra celle-ci dans la "commande fille"
+    static match(message) {
         return false;
     }
 
-    static action (message) {
-    }
+    // Pareil pour cette fonction
+    static action(message) {}
 
 };
