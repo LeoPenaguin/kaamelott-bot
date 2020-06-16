@@ -9,9 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "dotenv": "^8.0.0",
-    "node-opus": "^0.3.2",
-    "opusscript": "0.0.6"
+    "discord.js": "^12.*",
+    "dotenv": "^8.2.0",
+    "node-opus": "^0.3.3"
   }
 }

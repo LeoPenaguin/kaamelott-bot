@@ -10,7 +10,7 @@ module.exports = class Kaamelott extends Command {
     // Le bot exécute cette commande que si un 
     // utilisateur a écrit un message qui commence avec "!kaamelott"
     static match(message) {
-        return message.content.startsWith("!kaamelott");
+        return message.content.startsWith('!kaamelott');
     }
 
     // Et voilà l'action qui est exécutée !
@@ -19,9 +19,9 @@ module.exports = class Kaamelott extends Command {
         let member = message.member;
 
         // Si il est sur un channel de discution vocale
-        if (typeof member.voiceChannel !== "undefined") {
+        if (member.voice.channel !== null) {
             // Je récupère le channel
-            let voiceChannel = member.voiceChannel;
+            let voiceChannel = member.voice.channel;
 
             // Je m'y connecte
             voiceChannel
@@ -31,9 +31,13 @@ module.exports = class Kaamelott extends Command {
                     fs.readdir(sounds, (err, files) => {
                         // J'en récupère un au hazard
                         var sound = files[Math.floor((Math.random() * files.length) + 1)];
-                        console.log("🤖 " + member.user.tag + " played the sound : " + sound);
+                        console.log('🤖 ' + member.user.tag + ' played the sound : ' + sound);
                         // Je le lis dans le channel ou je me suis connecté
-                        connection.playFile(sounds + sound);
+                        const dispatcher = connection.play(sounds + sound);
+
+                        dispatcher.on('finish', () => {
+                            connection.disconnect()
+                        });
                     });
                 })
                 .catch((err) => {
