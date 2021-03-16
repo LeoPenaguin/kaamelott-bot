@@ -1,12 +1,13 @@
-// Renseignez-vous sur cette librairie, c'est super pratique
-require('dotenv').config()
+import dotenv from 'dotenv'
+import Discord from 'discord.js'
 
-const Discord = require('discord.js')
+import Kaamelott from './commands/kaamelott.js'
+import Indigne from './commands/indigne.js'
 
 const client = new Discord.Client()
-const Kaamelott = require('./commands/kaamelott')
+const playedGame = 'des BARRES'
 
-const playedGame = '!kaamelott'
+dotenv.config()
 
 // Quand le Bot se connecte
 client.on('ready', () => {
@@ -21,7 +22,8 @@ client.on('message', (message) => {
     if (!message.author.bot) {
         // On le traite avec une commande importé plus haut
         // (dans le dossier Commands)
-        Kaamelott.parse(message)
+        new Kaamelott().parse(message)
+        new Indigne().parse(message)
     }
 })
 

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Un bot qui en à gros",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +12,14 @@
   "dependencies": {
     "discord.js": "^12.*",
     "dotenv": "^8.2.0",
-    "node-opus": "^0.3.3"
+    "node-opus": "^0.3.3",
+    "opusscript": "^0.0.8"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",

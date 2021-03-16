@@ -1,14 +1,14 @@
 import { playSound } from '../lib/player.js'
 import Command from './command.js'
 
-const soundsPath = './sounds/kaamelott/'
+const soundsPath = './sounds/memes/'
 
 // Cette commande hérite de la classe Command
-export default class Kaamelott extends Command {
+export default class Indigne extends Command {
     // Le bot exécute cette commande que si un
-    // utilisateur a écrit un message qui commence avec "!kaamelott"
+    // utilisateur a écrit un message qui commence avec "!indigne"
     match(message) {
-        return message.content.startsWith('!kaamelott')
+        return message.content.startsWith('!indigne')
     }
 
     // Et voilà l'action qui est exécutée !
