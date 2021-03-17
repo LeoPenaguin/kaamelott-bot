@@ -8,7 +8,7 @@ export default class Indigne extends Command {
     // Le bot exécute cette commande que si un
     // utilisateur a écrit un message qui commence avec "!indigne"
     match(message) {
-        return message.content.startsWith('!indigne')
+        return message.content.startsWith('-indigne')
     }
 
     // Et voilà l'action qui est exécutée !

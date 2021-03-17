@@ -13,7 +13,8 @@
     "discord.js": "^12.*",
     "dotenv": "^8.2.0",
     "node-opus": "^0.3.3",
-    "opusscript": "^0.0.8"
+    "opusscript": "^0.0.8",
+    "string-similarity": "^4.0.4"
   },
   "devDependencies": {
     "eslint": "^7.22.0",

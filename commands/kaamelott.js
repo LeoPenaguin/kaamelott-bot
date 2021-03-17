@@ -8,7 +8,7 @@ export default class Kaamelott extends Command {
     // Le bot exécute cette commande que si un
     // utilisateur a écrit un message qui commence avec "!kaamelott"
     match(message) {
-        return message.content.startsWith('!kaamelott')
+        return message.content.startsWith('-kaamelott')
     }
 
     // Et voilà l'action qui est exécutée !
