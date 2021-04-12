@@ -1,3 +1,5 @@
+import Discord from 'discord.js'
+
 // La classe Command sera la classe parente des
 // autres commandes
 export default class Command {
@@ -8,7 +10,15 @@ export default class Command {
         if (this.match(message)) {
             this.action(message)
             console.log(`🤖 ${message.author.tag} a dit ${message.content}`)
-            message.delete()
+            
+            const emojis = ['🤣','😁','😆','🥳','🤩','🤮','😀','😂','😍','😎','💩','🤡','🤪']
+
+            const randomEmoji = Math.floor(
+                Math.random() * emojis.length
+            )
+
+            message.react(emojis[randomEmoji])
+
             return true
         }
         return false
